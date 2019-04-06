@@ -21,12 +21,12 @@ public class Salary implements Sendable<Integer> {
 
 
     @Override
-    public String getKey() {
+    public String getKeyForMailService() {
         return getTo();
     }
 
     @Override
-    public Integer getValue() {
+    public Integer getValueForMailService() {
         return getSalary();
     }
 }
