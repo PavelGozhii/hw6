@@ -5,8 +5,7 @@ import java.util.*;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
-        // write your code here
+    public static void main(String[] args) throws IOException {
         Set<Integer> set1 = new HashSet();
         set1.add(0);
         set1.add(2);
@@ -38,22 +37,21 @@ public class Main {
         }
 
         Pair<Integer, String> pair = Pair.of(1, "hello");
-        Integer i = pair.getFirst(); // 1
-        String s = pair.getSecond(); // "hello"
+        Integer i = pair.getFirst(); 
+        String s = pair.getSecond(); 
         System.out.println(pair.hashCode() + ": " + pair.getFirst() + ", " + pair.getSecond());
         Pair<Integer, String> pair2 = Pair.of(2, "hello");
         System.out.println(pair2.hashCode() + ": " + pair2.getFirst() + ", " + pair2.getSecond());
-        boolean mustBeTrue = pair.equals(pair2); // true!
+        boolean mustBeTrue = pair.equals(pair2); 
         System.out.println(mustBeTrue);
-        boolean mustAlsoBeTrue = pair.hashCode() == pair2.hashCode(); // true!
+        boolean mustAlsoBeTrue = pair.hashCode() == pair2.hashCode(); 
         System.out.println(pair.hashCode() + " " + pair2.hashCode());
         System.out.println(mustAlsoBeTrue);
 
-        String randomFrom = "Me"; // Некоторая случайная строка. Можете выбрать ее самостоятельно.
-        String randomTo = "You";  // Некоторая случайная строка. Можете выбрать ее самостоятельно.
-        int randomSalary = 100;  // Некоторое случайное целое положительное число. Можете выбрать его самостоятельно.
-
-// Создание списка из трех почтовых сообщений.
+        String randomFrom = "Me";
+        String randomTo = "You";
+        int randomSalary = 100;
+        
         MailMessage firstMessage = new MailMessage(
                 "Robert Howard",
                 "H.P. Lovecraft",
@@ -128,7 +126,9 @@ public class Main {
             fis.close();
             return animals;
         } catch (Exception e) {
+            e.printStackTrace();
             throw new IllegalArgumentException("Illegal Argument Exception");
+
         }
     }
 
