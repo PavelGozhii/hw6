@@ -1,7 +1,7 @@
 package com.company;
 
 public interface Sendable<T> {
-    String getKey();
+    String getKeyForMailService();
 
-    T getValue();
+    T getValueForMailService();
 }
