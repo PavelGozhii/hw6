@@ -1,7 +1,5 @@
 package com.company;
 
-import java.util.function.Consumer;
-
 public class MailMessage implements Sendable<String> {
 
     private String from;
@@ -28,12 +26,12 @@ public class MailMessage implements Sendable<String> {
 
 
     @Override
-    public String getKey() {
+    public String getKeyForMailService() {
         return getTo();
     }
 
     @Override
-    public String getValue() {
+    public String getValueForMailService() {
         return getContent();
     }
 }
