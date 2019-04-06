@@ -11,12 +11,13 @@ public class MailService<T> implements Consumer<Sendable<T>> {
         try {
             if (sendable != null) {
                 List<T> elements =
-                        listMap.get(sendable.getKey()) == Collections.EMPTY_LIST ? new LinkedList<T>() :
-                                listMap.get(sendable.getKey());
-                elements.add(sendable.getValue());
-                listMap.put(sendable.getKey(), elements);
+                        listMap.get(sendable.getKeyForMailService()) == Collections.EMPTY_LIST ? new LinkedList<T>() :
+                                listMap.get(sendable.getKeyForMailService());
+                elements.add(sendable.getValueForMailService());
+                listMap.put(sendable.getKeyForMailService(), elements);
             }
-        } catch (Exception ex) {
+        }catch (Exception ex){
+            System.err.println(ex);
         }
     }
 
